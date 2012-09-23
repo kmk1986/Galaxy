@@ -1,0 +1,1 @@
+cat scripts/lib/___AMD_header.js scripts/lib/Util.js scripts/lib/SimpleObject.js scripts/lib/Mediator.js scripts/lib/Module.js scripts/lib/Galaxy.js scripts/lib/___AMD_footer.js | uglifyjs -o scripts/Galaxy.AMD.js

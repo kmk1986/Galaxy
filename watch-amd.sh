@@ -1,0 +1,1 @@
+uglifyjs-watcher manifest-amd.json
