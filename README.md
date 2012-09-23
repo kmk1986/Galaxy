@@ -28,7 +28,7 @@ Download
 It's not recommended to download this project and use it in production. The project is under development.
 
 * [Download](https://raw.github.com/kmk1986/Backbone-Mediator/master/download/Galaxy.js)
-* [Download AMD Compatible](https://raw.github.com/kmk1986/Backbone-Mediator/master/download/Galaxy.AMD.js)
+* [Download AMD Compatible version](https://raw.github.com/kmk1986/Backbone-Mediator/master/download/Galaxy.AMD.js)
 
 Plugins
 
