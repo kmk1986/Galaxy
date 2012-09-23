@@ -7,10 +7,11 @@ Galaxy is a library-agnostic javascript implmentation of the mediator/sandbox. G
 Goal
 =====
 
-Galaxy doesn't try to be a framework. Its goal is to provide a fleixble pattern to be used with your existing architcture instead of forcing you to use a pre-defined structure. It is up to you how you use Galaxy.
+ Its goal is to provide a fleixble pattern to be used with your existing architcture instead of forcing you to use a pre-defined structure. It is up to you how you use Galaxy.
 
 Based on
 =========
+
 * http://www.yuiblog.com/blog/2009/09/17/video-bayjax-sept-09/
 * http://addyosmani.com/largescalejavascript/
 
