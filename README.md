@@ -1,7 +1,7 @@
 About
 ======
 
-Galaxy is a library-agnostic javascript implmentation of the mediator/sandbox. Galaxy allows your objects to be de-coupled and commnucate with each other through a mediator.
+Galaxy is a library-agnostic javascript implmentation of the mediator/sandbox. Galaxy allows your objects to be de-coupled and communicate with each other through a mediator.
 
 
 Goal
@@ -47,9 +47,6 @@ Test
 Todo
 =====
 
-* clean up each modules
-* create test cases
 * create unit tests
 * create a browser plugin; display event relationships among modules;
-* make a function that returns a json represented event map
 

@@ -14,6 +14,8 @@ var _Mediator = (function(){
 
 	var internalEvents = {}
 
+	var hasCallbacks = false;
+
 	return {
 
 		/*
@@ -32,6 +34,9 @@ var _Mediator = (function(){
 				}
 
 				internalEvents[eventName].push( callback );
+
+				// set hasCallbacks to ture so that trigger can trigger callbacks
+				hasCallbacks = true;
 
 				return true;
 
@@ -87,20 +92,25 @@ var _Mediator = (function(){
 
 		trigger: function( eventName, eventData ) {
 
+			// we don't want to loop through events unless we have callbacks
+			
+			if( hasCallbacks ) { 
 
-			if( internalEvents[eventName] ) {
+				if( internalEvents[eventName] ) {
 
 
-				eventData = eventData || {}
+					eventData = eventData || {}
 
-				Util.each(internalEvents[eventName], function(event){
+					Util.each(internalEvents[eventName], function(event){
 
-					if( typeof event === 'function' ) {
-						event(eventData);
-					}
+						if( typeof event === 'function' ) {
+							event(eventData);
+						}
 
-				});
+					});
 
+
+				}
 
 			}
 
