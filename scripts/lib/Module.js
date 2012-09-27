@@ -105,17 +105,11 @@ Module.prototype = {
 		{
 			callback = Util.proxy(callback, bindTo);
 		}
-
 		
 
 		this.subscribedEvents[ eventName ] = {
 			callback: callback
 		}
-
-		
-
-		// Module.addCallback( eventName, callback );
-
 
 		_Mediator.trigger('event-subscribed', {
 			sender: {
@@ -174,6 +168,7 @@ Module.prototype = {
 
 			// set null for now;
 			// ie6 doesn't support delete
+			// may drop ie6 later
 			this.subscribedEvents[eventName] = null;
 			
 			try {
@@ -273,10 +268,9 @@ Module.prototype = {
 
 		var i;
 
-		for( i in events )
-		{
-			if( events.hasOwnProperty(i) )
-			{
+		for( i in events ) {
+
+			if( events.hasOwnProperty(i) ) {
 				this.reserveEvent( events[i] );
 			}
 		}
@@ -311,8 +305,7 @@ Module.prototype = {
 
 	subscribed: function(eventName)
 	{
-		if( this.subscribedEvents[eventName] != undefined )
-		{
+		if( this.subscribedEvents[eventName] != undefined ) {
 			return true;
 		}
 
@@ -327,8 +320,7 @@ Module.prototype = {
 	addReceivedEvent: function( senderName, eventName)
 	{
 
-		if( this.receivedEvents[eventName] == undefined )
-		{
+		if( this.receivedEvents[eventName] == undefined ) {
 			this.receivedEvents[eventName] = {
 				senders: []
 			}
