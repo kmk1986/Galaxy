@@ -4,7 +4,7 @@ var ModuleCollection = new SimpleObject();
 
 /*
 *	This Object is not public.
-*	It is accessed by Backbone.Mediator
+*	It is accessed by _Mediator
 */
 
 var Mediator = (function(){

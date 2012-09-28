@@ -241,8 +241,4 @@ _Mediator.Class = {
 	Mediator: Mediator
 } 
 
-if( window.Backbone ) {
-	Backbone.Galaxy = _Mediator;
-} else {
-	window.Galaxy = _Mediator;
-}
+window.Galaxy = _Mediator;
