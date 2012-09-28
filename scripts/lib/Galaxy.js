@@ -10,16 +10,18 @@
 */
 var _Mediator = (function(){
 
-	var instances = {}
 
 	var internalEvents = {}
 
+	// used to check if we have at least 1 callback
+	// if this is remains false, _Mediator.trigger doesn't even check for the existence of callbacks
 	var hasCallbacks = false;
 
 	return {
 
 		/*
 		* Implements pub/sub pattern
+		* These can be useful for the future
 		* @param {string} - eventName
 		* @param {function} - a callback upon {eventName}  
 		*/
@@ -235,10 +237,3 @@ var _Mediator = (function(){
 
 
 }());
-
-_Mediator.Class = {
-	Module: Module,
-	Mediator: Mediator
-} 
-
-window.Galaxy = _Mediator;
