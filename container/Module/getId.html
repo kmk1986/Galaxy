@@ -1,0 +1,25 @@
+<h2 id='Module.getStatus' class='method'>Mediator.getId</h2>
+<p class="description">returns the id of the module</p>
+
+
+<h2 class="usage desc-title">Usage</h2>
+<p>Module.getId()</p>
+
+<h2 class="desc-title">Notes</h2>
+<p class="description">We might not need .getId() as a public method. I can't find a use case for it.</p>
+
+<h2 class="desc-title">Example</h2>
+
+<pre class="brush:js">
+
+var Module = (function(){
+    
+    var mediator = Galaxy.register('testModule');
+
+    // outputs testModule
+    console.log( mediator.getId() );
+
+
+}());    
+
+</pre>

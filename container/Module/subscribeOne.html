@@ -1,0 +1,56 @@
+<h2 id='Module.subscribeOne' class='method'>Module.subscribeOne</h2>
+<p class="description">subscribe to an event</p>
+
+
+<h2 class="usage desc-title">Usage</h2>
+<p class="description">Module.subscribeOne(eventName, callback, context);</p>
+
+<h2 class="desc-title">Parameter</h2>
+<p class="description">subscribe expects an object (collection of event and callback paris).</p>
+<table class="parameter">
+    <thead>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>eventName</td>
+            <td>String</td>
+            <td>name of the event</td>
+        </tr>
+        <tr>
+            <td>callback</td>
+            <td>Function</td>
+            <td>a callback function</td>
+        </tr>
+        <tr>
+            <td>context</td>
+            <td>Object</td>
+            <td>a context for the callback function</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 class="desc-title">Example</h2>
+
+<pre class="brush:js">
+
+var Cart = (function(){
+    
+    var mediator = Galaxy.register('testModule');
+    this.name = 'Cart';
+
+    var onAddToCart = function(eventData) {
+
+    	this.mediator.unsubscribe("addToCart");
+
+	}
+
+
+    mediator.subscribeOne("addToCart", onAddToCart, this);
+   
+
+}());    
+
+</pre>

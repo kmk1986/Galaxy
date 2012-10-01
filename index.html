@@ -1,66 +1,1053 @@
-<!doctype html>
+<!DOCTYPE HTML>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Galaxy by kmk1986</title>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <title>Galaxy API Doc</title>
+    <link rel="stylesheet" href="style.css">
+    <link type="text/css" rel="stylesheet" href="scripts/syntaxhighlighter/styles/shCore.css"/>
+    <link type="text/css" rel="stylesheet" href="scripts/syntaxhighlighter/styles/shThemeDefault.css"/>
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Galaxy</h1>
-        <p></p>
+</head>
+<body>
 
-        <p class="view"><a href="https://github.com/kmk1986/Galaxy">View the Project on GitHub <small>kmk1986/Galaxy</small></a></p>
+<div id="sidebar" class="interface">
+<a href="#" class="toc_title">Galaxy - <span class='visibility'>Public</span></a>
 
 
-        <ul>
-          <li><a href="https://github.com/kmk1986/Galaxy/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/kmk1986/Galaxy/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/kmk1986/Galaxy">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h3>Welcome to GitHub Pages.</h3>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<ul class="toc_section">
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+  <li><a href="#Galaxy.register">- register</a></li>
+  <li><a href="#Galaxy.registerSingleton">- registerSingleton</a></li>
+  <li><a href="#Galaxy.on">- on</a></li>
+  <li><a href="#Galaxy.off">- off</a></li>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+  <li><a href="#Galaxy.getEventMapOf">- getEventMapOf</a></li>
+  <li><a href="#Galaxy.getEventMap">- getEventMap</a></li>
+  <li><a href="#Galaxy.getListenersByEventName">- getListenersByEventName</a></li>
+  <li><a href="#Galaxy.getReserverByEventName">- getReserverByEventName</a></li>
 
-<h3>Designer Templates</h3>
+</ul><a href="#Module" class="toc_title">Mediator - <span class='visibility'>Private</span></a>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<ul class="toc_section">
 
-<h3>Rather Drive Stick?</h3>
+    <li><a href="#Mediator.publish">- publish</a></li>
+    <li><a href="#Mediator.register">- register</a></li>
+    <li><a href="#Mediator.request">- request</a></li>
+    <li><a href="#Mediator.addResponse">- addResponse</a></li>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+</ul><a href="#Module" class="toc_title">Module - <span class='visibility'>Private</span></a>
 
-<h3>Authors and Contributors</h3>
+<ul class="toc_section">
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+    <li><a href="#Module.start">- start</a></li>
+    <li><a href="#Module.stop">- stop</a></li>
+    <li><a href="#Module.getStatus">- getStatus</a></li>
+    <li><a href="#Module.subscribeOne">- subscribeOne</a></li>
+    <li><a href="#Module.subscribe">- subscribe</a></li>
+    <li><a href="#Module.publish">- publish</a></li>
+    <li><a href="#Module.hasReserved" class='not-done'>- hasReserved</a></li>
+    <li><a href="#Module.reserveEvent" class='not-done'>- reserveEvent</a></li>
+    <li><a href="#Module.reserveEvents" class='not-done'>- reserveEvents</a></li>
+    <li><a href="#Module.getId">- getId</a></li>
+    <li><a href="#Module.getEvents" class='not-done'>- getEvents</a></li>
+    <li><a href="#Module.subscribed" class='not-done'>- subscribed</a></li>
+    <li><a href="#Module.reserveRequest" class='not-done'>- reserveRequest</a></li>
+    <li><a href="#Module.hasResponse" class='not-done'>- hasResponse</a></li>
+    <li><a href="#Module.responseOne" class='not-done'>- responseOne</a></li>
+    <li><a href="#Module.request" class='not-done'>- request</a></li>
+    <li><a href="#Module.response" class='not-done'>- response</a></li>
 
-<h3>Support or Contact</h3>
+</ul>  <a href="#" class='toc_title'>E.T.C</a>
+  <ul class="toc_section">
+      <li><a href="#internalEvents">- internal events</a></li>
+  </ul><a href="#Module" class="toc_title">Examples</a>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/kmk1986">kmk1986</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
+<ul class="toc_section">
+    <li><a href="#Example.modulePattern">- Module Pattern</a></li>
+    <li><a href="#Example.backbone">- Backbone</a></li>
+    <li><a href="#Example.reuiqrejs+backbone">- RequireJS + Backbone</a></li>
+</ul><a href="#" class="toc_title">Plugins</a>
+
+<ul class="toc_section">
+
+  <li><a href="#Plugins.eventLogger">- Event Logger</a></li>
+
+</ul></div><div class="container"><!-- Container -->
+
+<!-- Mediator.register -->
+
+<h2 id='Galaxy.register' class='method'>Galaxy.register</h2>
+
+<p class="description">Creates a facade object and return it</p>
+
+<h2 class="usage desc-title">Usage</h2>
+<p>Galaxy.register('your id')</p>
+<table class="parameter">
+    <thead>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>id</td>
+            <td>String</td>
+            <td>id of your facade instance</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 class="desc-title">Example</h2>
+
+<pre class='brush: js'>
+    var GUIWindow = (function(){
+
+        // notifier gets all the methods from Module (facade)
+        var notifier = Galaxy.register('test')
+
+    }());
+</pre>
+<!-- Mediator.registerSingleton -->
+
+<h2 id='Galaxy.registerSingleton' class='method'>Galaxy.registerSingleton</h2>
+<p class="description">Attempts to create a facade object with an id. If the Mediator already has a facde object with the id provided, it simply returns it.</p>
+
+<h2 class="desc-title">Example</h2>
+<pre class="brush:js">
     
-  </body>
+    var CartItem = function() {
+
+        // all the CartItem instances will have the same facade instance
+        this.notifier = Galaxy.registerSingleton('cartItem');
+
+    }
+
+    var Cart = (function(){
+
+        var notifier = Galaxy.register('cart');
+        var items = [];
+
+        var addItem = fuction( eventData ) {
+
+            items.push( new CartItem() );
+
+        }
+
+        notifier.subscribe({
+            'addItem': [addItem, this]
+        });
+
+    }());
+
+</pre>
+<!-- Mediator.on -->
+
+<h2 id='Mediator.on' class='method'>Galaxy.on</h2>
+<p class="description">Bind to an internal event. on/off are used to make a plugin</p>
+
+<h2 class="usage desc-title">Usage</h2>
+<p>Galaxy.on(eventName, callback)</p>
+<table class="parameter">
+    <thead>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>eventName</td>
+            <td>String</td>
+            <td>name of the internal event you're interested in</td>
+        </tr>
+        <tr>
+            <td>callback</td>
+            <td>Function</td>
+            <td>a callback for the event</td>
+        </tr>        
+    </tbody>
+</table>
+
+<h2 class="desc-title">Example</h2>
+<p class="description">
+    The following code snippet will console.log out whenever an event has been subscribed/published.
+</p>
+<pre class="brush:js">
+
+;(function(Galaxy){
+    
+    /*
+    * @param {object} eventData
+    *   @param {object} sender
+    *       @param {string} namespace - sender object
+    *       @param {string} method - sender method
+    *   @param {string} eventName - name of the event published
+    *   @param {string} senderName - name of the sender who published  the event
+    *   @param {string} moduleName - name of the module who received the event
+    *   @param {object} eventData 
+    */
+    
+    Galaxy.on('event-published', function(eventData){
+
+        var msg = [
+            eventData.senderName,
+            " published '",
+            eventData.eventName,
+            "' to ",
+            eventData.moduleName,
+            " with eventData of ",
+            eventData.eventData
+        ];
+
+        eventData = null;
+
+        console.log(msg.join(""));
+
+    });
+
+
+    /*
+    * @param {object} eventData
+    *   @param {object} sender
+    *       @param {string} namespace - sender object
+    *       @param {string} method - sender method
+    *   @param {string} eventName - name of the event subscribed
+    *   @param {string} moduleName - name of the module who subscribed the event
+    */  
+    Galaxy.on('event-subscribed', function(eventData){
+
+        var msg = [
+
+            eventData.moduleName,
+            " subscribed to ",
+            eventData.eventName
+
+        ];
+
+        eventData = null;
+
+        console.log( msg.join("") );
+        
+    });
+
+
+
+}(Galaxy));
+
+</pre><h2 id='Mediator.on' class='method'>Galaxy.off</h2>
+<p class="description">Unbind an event from the internal events</p>
+
+<h2 class="usage desc-title">Usage</h2>
+<p>Galaxy.off(eventName, callback)</p>
+<table class="parameter">
+    <thead>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>eventName</td>
+            <td>String</td>
+            <td>name of the internal event you've subscribed</td>
+        </tr>
+        <tr>
+            <td>callback</td>
+            <td>Function</td>
+            <td>The callback you passed to Galaxy.on method</td>
+        </tr>        
+    </tbody>
+</table>
+
+<h2 class="desc-title">Example</h2>
+<pre class="brush:js">
+
+;(function(Galaxy){
+    
+    /*
+    * @param {object} eventData
+    *   @param {object} sender
+    *       @param {string} namespace - sender object
+    *       @param {string} method - sender method
+    *   @param {string} eventName - name of the event published
+    *   @param {string} senderName - name of the sender who published  the event
+    *   @param {string} moduleName - name of the module who received the event
+    *   @param {object} eventData 
+    */
+
+    var onEventPublished = function(eventData){
+
+        var msg = [
+            eventData.senderName,
+            " published '",
+            eventData.eventName,
+            "' to ",
+            eventData.moduleName,
+            " with eventData of ",
+            eventData.eventData
+        ];
+
+        eventData = null;
+
+        console.log(msg.join(""));
+
+
+
+    }
+
+    Galaxy.on('event-published', onEventPublished );
+
+    // pseudo code
+    // when a user clicks 'stop logging', stop it.
+
+    $("#stoppLogging").on('click',function(){
+
+        Galaxy.off("event-published", onEventPublished );
+
+    });
+
+
+
+}(Galaxy));
+
+</pre><h2 id='Galaxy.getEventMapOf' class='method'>Galaxy.getEventMapOf</h2>
+<p class="description">returns a detail data of a module's events</p>
+
+<h2 class="usage desc-title">Usage</h2>
+<p>Galaxy.getEventMapOf(moduleName)</p>
+<table class="parameter">
+    <thead>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>moduleName</td>
+            <td>String</td>
+            <td>name of the mdoule</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 class="desc-title">Return</h2>
+
+<table class="parameter">
+    <thead>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>publishedEvents</td>
+            <td>Undefined or Object</td>
+            <td>a list of published events</td>
+        </tr>
+
+        <tr>
+            <td>queriedRequest</td>
+            <td>Undefined or Object</td>
+            <td>a list of queried requests</td>
+        </tr>
+        <tr>
+            <td>receivedEvents</td>
+            <td>Undefined or Object</td>
+            <td>a list of received events</td>
+        </tr>
+        <tr>
+            <td>reservedEvents</td>
+            <td>Undefined or Object</td>
+            <td>a list of reserved events</td>
+        </tr>
+        <tr>
+            <td>respondedResponse</td>
+            <td>Undefined or Object</td>
+            <td>a list of responded responses</td>
+        </tr>
+        <tr>
+            <td>subscribedEvents</td>
+            <td>Undefined or Object</td>
+            <td>a list of subscribed events</td>
+        </tr>
+    </tbody>
+
+
+</table>
+<h2 id='Galaxy.getEventMap' class='method'>Galaxy.getEventMap</h2>
+<p class="description">returns a collection of <a href="#Galaxy.getEventMapOf">Galaxy.getEventMapOf</a></p>
+
+<h2 class="usage desc-title">Usage</h2>
+<p>Galaxy.getEventMap()</p>
+<h2 id='Galaxy.getListenersByEventName' class='method'>Galaxy.getListenersByEventName</h2>
+<p class="description">returns a lsit of module ids who has subscribed to $eventName</p>
+
+<h2 class="usage desc-title">Usage</h2>
+<p>Galaxy.getListenersByEventName(eventName)</p>
+<table class="parameter">
+    <thead>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>eventName</td>
+            <td>String</td>
+            <td>name of the event</td>
+        </tr>
+    </tbody>
+</table>
+
+<p class="description">Returns an array of module ids</p>
+
+<h2 class="desc-title">Example</h2>
+
+<pre class="brush:js">
+ 
+var CartItem = function(options) {
+
+}
+
+var Cart = (function(){
+
+    var mediator = Galaxy.register('Cart');
+
+    var items = [];
+
+    mediator.subscribe({
+        'addToCart': [this.addToCart]
+    });
+
+    return {
+
+        addToCart: function(eventData) {
+            items.push( new CartItem(eventData) );
+        }
+    }
+
+
+}());
+
+var PageController = (function(){
+
+    var mediator = Galaxy.register('Page');
+
+    mediator.reserveEvent("addToCart");
+
+    var onAddToCartClicked = function() {
+
+        mediator.publish("addToCart",{});
+    
+    }
+
+    $("#addToCart").on("click", onAddToCartClicked );
+
+
+}());
+
+// Galaxy.getListenersByEventName("addToCart") outputs
+// ["Cart"]
+
+
+</pre><h2 id='Galaxy.getReserverByEventName' class='method'>Galaxy.getListenersByEventName</h2>
+<p class="description">returns a lsit of module ids who has reserved to $eventName</p>
+
+<h2 class="usage desc-title">Usage</h2>
+<p>Galaxy.getReserverByEventName(eventName)</p>
+<table class="parameter">
+    <thead>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>eventName</td>
+            <td>String</td>
+            <td>name of the event</td>
+        </tr>
+    </tbody>
+</table>
+
+<p class="description">Returns an array of module ids</p>
+
+<h2 class="desc-title">Example</h2>
+
+<pre class="brush:js">
+ 
+var CartItem = function(options) {
+
+}
+
+var Cart = (function(){
+
+    var mediator = Galaxy.register('Cart');
+
+    var items = [];
+
+    mediator.subscribe({
+        'addToCart': [this.addToCart]
+    });
+
+    return {
+
+        addToCart: function(eventData) {
+            items.push( new CartItem(eventData) );
+        }
+    }
+
+
+}());
+
+var PageController = (function(){
+
+    var mediator = Galaxy.register('Page');
+
+    mediator.reserveEvent("addToCart");
+
+    var onAddToCartClicked = function() {
+
+        mediator.publish("addToCart",{});
+    
+    }
+
+    $("#addToCart").on("click", onAddToCartClicked );
+
+
+}());
+
+// Galaxy.getReserverByEventName("addToCart") outputs
+// ["Page"]
+
+
+</pre><h2 id='Mediator.publish' class='method'>Mediator.publish</h2>
+<p class="description">publishes an event</p>
+
+<ul class="info">
+    <li>
+        <strong>Invoked By:</strong>
+        <a href="#Module.publish">Module.publish</a>
+    </li>
+</ul>
+
+
+<h2 class="usage desc-title">Usage</h2>
+<p>Mediator.publish(senderName, eventName, eventData)</p>
+<table class="parameter">
+    <thead>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>senderName</td>
+            <td>String</td>
+            <td>name of the module who's requesting this method</td>
+        </tr>
+        <tr>
+            <td>eventName</td>
+            <td>String</td>
+            <td>name of the event</td>
+        </tr>
+        <tr>
+            <td>eventData</td>
+            <td>Mixed</td>
+            <td>data for the event</td>
+        </tr>
+    </tbody>
+</table>
+
+<p class="description">Returns an array of module ids</p>
+<h2 id='Mediator.register' class='method'>Mediator.register</h2>
+<p class="description">attempts to register a module</p>
+
+<ul class="info">
+    <li>
+        <strong>Invoked By:</strong>
+        <a href="#Galaxy.register">Galaxy.register</a>
+    </li>
+</ul>
+
+
+<h2 class="usage desc-title">Usage</h2>
+<p>Mediator.register(name, autostart)</p>
+<table class="parameter">
+    <thead>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>name</td>
+            <td>String</td>
+            <td>name of the module</td>
+        </tr>
+        <tr>
+            <td>autostart</td>
+            <td>Bool</td>
+            <td>if true, starts the module immediately</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 class="desc-title">Returns</h2>
+
+<ul class="info">
+    <li>
+        <strong>Returns:</strong>
+        a Module object
+    </li>
+</ul><h2 id='Mediator.request' class='method'>Mediator.request</h2>
+<p class="description">request a response to the registered modules</p>
+
+<ul class="info">
+    <li>
+        <strong>Invoked By:</strong>
+        <a href="#Module.request">Module.request</a>
+    </li>
+</ul>
+
+
+<h2 class="usage desc-title">Usage</h2>
+<p>Mediator.request( moduleName, requestName)</p>
+<table class="parameter">
+    <thead>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>moduleName</td>
+            <td>String</td>
+            <td>name of the module</td>
+        </tr>
+        <tr>
+            <td>requestName</td>
+            <td>String</td>
+            <td>name of the request</td>
+        </tr>
+    </tbody>
+</table><h2 id='Mediator.addResponse' class='method'>Mediator.addResponse</h2>
+<p class="description">adds a response to the ResponseMap</p>
+
+<ul class="info">
+    <li>
+        <strong>Invoked By:</strong>
+        <a href="#Module.addResponseOne">Module.addResponseOne</a>
+    </li>
+</ul>
+
+
+<h2 class="usage desc-title">Usage</h2>
+<p>Mediator.addResponseOne( moduleName, responseName)</p>
+<table class="parameter">
+    <thead>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>moduleName</td>
+            <td>String</td>
+            <td>name of the module</td>
+        </tr>
+        <tr>
+            <td>responseName</td>
+            <td>String</td>
+            <td>name of the response</td>
+        </tr>
+    </tbody>
+</table><h2 id='Module.start' class='method'>Mediator.start</h2>
+<p class="description">starts a module. If the module is in 'pause' status, it will resume. If the module has never been started, it will initiailize the module.</p>
+
+
+<h2 class="usage desc-title">Usage</h2>
+<p>Module.start()</p>
+
+<h2 class="desc-title">Example</h2>
+
+<pre class="brush:js">
+
+var Module = (function(){
+    
+    // you must pass falto as the secnd parameter of the register method
+    // the default is 'true' so that it will autostart all the time
+    var mediator = Galaxy.register('testModule' , false);
+
+    // this will fail since the mediator is not started yet.
+    mediator.subscribe({
+    	'onReady': [this.onReady, this]
+	});
+
+	mediator.start();
+	
+
+}());    
+
+</pre><h2 id='Module.stop' class='method'>Mediator.stop</h2>
+<p class="description">stops a module. All the module will be removed from the mediator. Once you call stop, you will have to re-initialize it with <a href='#module.register' class='refer'>.register</a> to re-use it. You also have to call <a href='#module.subscribe' class='refer'>.subscribe</a> again. Basically, calling stop() makes a module object unusable.</p>
+
+
+<h2 class="usage desc-title">Usage</h2>
+<p>Module.stop()</p>
+
+<h2 class="desc-title">Example</h2>
+
+<pre class="brush:js">
+
+var Module = (function(){
+
+    var mediator = Galaxy.register('testModule');
+
+    var onReady = function() {
+
+    	// stop this module when we get 'onReady' event
+    	mediator.stop();
+	}
+
+
+    mediator.subscribe({
+    	'onReady': [onReady, this]
+	});
+
+
+}());    
+
+</pre><h2 id='Module.getStatus' class='method'>Mediator.getStatus</h2>
+<p class="description">returns the status of the module</p>
+
+
+<h2 class="usage desc-title">Usage</h2>
+<p>Module.getStatus()</p>
+
+<h2 class="desc-title">Example</h2>
+
+<pre class="brush:js">
+
+var Module = (function(){
+    
+    var mediator = Galaxy.register('testModule');
+
+    console.log( mediator.getStatus() );
+
+    // outputs one of the following
+    // 0 for STOPPED
+    // 1 for STARTED
+    // 2 for PAUSED
+
+}());    
+
+</pre><h2 id='Module.subscribeOne' class='method'>Module.subscribeOne</h2>
+<p class="description">subscribe to an event</p>
+
+
+<h2 class="usage desc-title">Usage</h2>
+<p class="description">Module.subscribeOne(eventName, callback, context);</p>
+
+<h2 class="desc-title">Parameter</h2>
+<p class="description">subscribe expects an object (collection of event and callback paris).</p>
+<table class="parameter">
+    <thead>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>eventName</td>
+            <td>String</td>
+            <td>name of the event</td>
+        </tr>
+        <tr>
+            <td>callback</td>
+            <td>Function</td>
+            <td>a callback function</td>
+        </tr>
+        <tr>
+            <td>context</td>
+            <td>Object</td>
+            <td>a context for the callback function</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 class="desc-title">Example</h2>
+
+<pre class="brush:js">
+
+var Cart = (function(){
+    
+    var mediator = Galaxy.register('testModule');
+    this.name = 'Cart';
+
+    var onAddToCart = function(eventData) {
+
+    	this.mediator.unsubscribe("addToCart");
+
+	}
+
+
+    mediator.subscribeOne("addToCart", onAddToCart, this);
+   
+
+}());    
+
+</pre><h2 id='Module.subscribe' class='method'>Module.subscribe</h2>
+<p class="description">subscribe to events</p>
+
+
+<h2 class="usage desc-title">Usage</h2>
+<p class="description">Module.subscribe(object);</p>
+<pre class='brush:js'>Module.subscrbe({
+	"event name goes here": this.callback,
+	"event name goes here": [this.callback, context]
+})</pre>
+
+<h2 class="desc-title">Dev Notes</h2>
+<p class="description">Module.subscribe is a facade method for <a href='#Module.subscribeOne' class='refer'>Module.subscribeOne</a>. It invokes subscribeOne to subscribe an event.</p>
+
+<h2 class="desc-title">Parameter</h2>
+<p class="description">subscribe expects an object (collection of event and callback paris).</p>
+<table class="parameter">
+    <thead>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>eventName</td>
+            <td>String</td>
+            <td>name of the event</td>
+        </tr>
+        <tr>
+            <td>callback</td>
+            <td>a function or an array with a function and a context</td>
+            <td>depends on what you want you can pass either a function or a function with a context in an array. Refer to the example or usage.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 class="desc-title">Example</h2>
+
+<pre class="brush:js">
+
+var Cart = (function(){
+    
+    var mediator = Galaxy.register('testModule');
+    this.name = 'Cart';
+
+    var onAddToCart = function(eventData) {
+
+    	//when you use 'this' keyword here, it refers to the window object
+    	this.mediator.unsubscribe("addToCart"); // fails
+
+	}
+
+	var onRemoveFromCart = function(eventData) {
+
+		console.log( this.name ); // outputs Cart as expected
+
+	}
+
+    mediator.subscribe({
+    	'addToCart': onAddToCart,
+    	'removeFromCart': [onRemoveFromCart, this]
+	});
+   
+
+}());    
+
+</pre><h2 id='Module.publish' class='method'>Module.publish</h2>
+<p class="description">publishes an event</p>
+
+
+<h2 class="usage desc-title">Usage</h2>
+<p class="description">Module.publish(eventName, eventData);</p>
+
+<h2 class="desc-title">Note</h2>
+
+
+<h2 class="desc-title">Parameter</h2>
+<table class="parameter">
+    <thead>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>eventName</td>
+            <td>String</td>
+            <td>name of the event</td>
+        </tr>
+        <tr>
+            <td>eventData</td>
+            <td>Mixed</td>
+            <td>a data for the event</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 class="desc-title">Example</h2>
+
+<pre class="brush:js">
+
+var Cart = (function(){
+    
+    var mediator = Galaxy.register('testModule');
+    this.name = 'Cart';
+
+    var onAddToCart = function(eventData) {
+
+        // code goes here
+        // let other modules know that Cart has added an item
+        // note that we've already reserved 'ItemAdded'
+
+        mediator.publish("ItemAdded",{
+            itemName: "test item",
+            price: 33
+        });
+
+
+	}
+
+	var onRemoveFromCart = function(eventData) {
+
+		console.log( this.name ); // outputs Cart as expected
+
+	}
+
+    mediator.reserveEvents(["ItemAdded"]);
+
+    mediator.subscribe({
+    	'addToCart': onAddToCart,
+    	'removeFromCart': [onRemoveFromCart, this]
+	});
+   
+
+}());    
+
+</pre><h2 id='Module.getStatus' class='method'>Mediator.getId</h2>
+<p class="description">returns the id of the module</p>
+
+
+<h2 class="usage desc-title">Usage</h2>
+<p>Module.getId()</p>
+
+<h2 class="desc-title">Notes</h2>
+<p class="description">We might not need .getId() as a public method. I can't find a use case for it.</p>
+
+<h2 class="desc-title">Example</h2>
+
+<pre class="brush:js">
+
+var Module = (function(){
+    
+    var mediator = Galaxy.register('testModule');
+
+    // outputs testModule
+    console.log( mediator.getId() );
+
+
+}());    
+
+</pre><h2 id='Module.getSubscribedEvents' class='method'>Module.getSubscribedEvents</h2>
+<p class="description">returns an array of subscribed events</p>
+
+
+<h2 class="usage desc-title">Usage</h2>
+<p>Module.getSubscribedEvents()</p>
+
+<h2 class="desc-title">Example</h2>
+
+<pre class="brush:js">
+
+var Module = (function(){
+
+    var mediator = Galaxy.register('testModule');
+
+    mediator.subscribe({
+    	'onReady': [onReady, this]
+	});
+
+
+	// outputs ['onReady']
+	console.log( mediator.getSubscribedEvents() );	
+	
+
+}());    
+
+</pre>
+<h2 id='internalEvents' class='method'>Internal Events</h2>
+
+<h2 class="desc-title">event-published</h2>
+
+<table class="parameter">
+    <thead>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>eventName</td>
+            <td>String</td>
+            <td>name of the event published</td>
+        </tr>
+        <tr>
+            <td>senderName</td>
+            <td>String</td>
+            <td>name of the sender who published the event</td>
+        </tr>        
+        <tr>
+            <td>moduleName</td>
+            <td>String</td>
+            <td>name of the module who received the event</td>
+        </tr>   
+        <tr>
+            <td>eventData</td>
+            <td>Mixed</td>
+            <td>Optional</td>
+        </tr>               
+    </tbody>
+</table>
+
+<h2 class="desc-title">event-subscribed</h2>
+
+<table class="parameter">
+    <thead>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>eventName</td>
+            <td>String</td>
+            <td>name of the event subscribed</td>
+        </tr>
+        <tr>
+            <td>moduleName</td>
+            <td>String</td>
+            <td>name of the module who subscribed the event</td>
+        </tr>        
+    </tbody>
+</table>
+
+<h2 class="desc-title">event-unsubscribed</h2>
+<h2 class="desc-title">event-listener-not-found</h2></div><script type="text/javascript" src="scripts/syntaxhighlighter/scripts/shCore.js"></script>
+<script type="text/javascript" src="scripts/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+<script type="text/javascript">
+    SyntaxHighlighter.defaults['toolbar'] = true;
+    SyntaxHighlighter.all({});
+</script>
+
+</body>
 </html>

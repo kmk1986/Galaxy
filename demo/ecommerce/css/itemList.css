@@ -1,0 +1,14 @@
+
+.item-list ul {
+	margin-left: 20px;
+}
+
+.item-list ul li {
+	float: left;
+	margin: 10px;
+	height: 220px;
+}
+
+.item-list ul li img {
+	width: 150px;
+}

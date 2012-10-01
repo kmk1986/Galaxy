@@ -1,0 +1,72 @@
+<h2 id='Galaxy.getListenersByEventName' class='method'>Galaxy.getListenersByEventName</h2>
+<p class="description">returns a lsit of module ids who has subscribed to $eventName</p>
+
+<h2 class="usage desc-title">Usage</h2>
+<p>Galaxy.getListenersByEventName(eventName)</p>
+<table class="parameter">
+    <thead>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>eventName</td>
+            <td>String</td>
+            <td>name of the event</td>
+        </tr>
+    </tbody>
+</table>
+
+<p class="description">Returns an array of module ids</p>
+
+<h2 class="desc-title">Example</h2>
+
+<pre class="brush:js">
+ 
+var CartItem = function(options) {
+
+}
+
+var Cart = (function(){
+
+    var mediator = Galaxy.register('Cart');
+
+    var items = [];
+
+    mediator.subscribe({
+        'addToCart': [this.addToCart]
+    });
+
+    return {
+
+        addToCart: function(eventData) {
+            items.push( new CartItem(eventData) );
+        }
+    }
+
+
+}());
+
+var PageController = (function(){
+
+    var mediator = Galaxy.register('Page');
+
+    mediator.reserveEvent("addToCart");
+
+    var onAddToCartClicked = function() {
+
+        mediator.publish("addToCart",{});
+    
+    }
+
+    $("#addToCart").on("click", onAddToCartClicked );
+
+
+}());
+
+// Galaxy.getListenersByEventName("addToCart") outputs
+// ["Cart"]
+
+
+</pre>

@@ -1,0 +1,27 @@
+<h2 id='Module.getSubscribedEvents' class='method'>Module.getSubscribedEvents</h2>
+<p class="description">returns an array of subscribed events</p>
+
+
+<h2 class="usage desc-title">Usage</h2>
+<p>Module.getSubscribedEvents()</p>
+
+<h2 class="desc-title">Example</h2>
+
+<pre class="brush:js">
+
+var Module = (function(){
+
+    var mediator = Galaxy.register('testModule');
+
+    mediator.subscribe({
+    	'onReady': [onReady, this]
+	});
+
+
+	// outputs ['onReady']
+	console.log( mediator.getSubscribedEvents() );	
+	
+
+}());    
+
+</pre>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>E-Commerce Demo</title>
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.6.0/build/cssreset/cssreset-min.css">
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.6.0/build/cssgrids/grids-min.css">
+
+<link rel="stylesheet" href="css/style.css"/>
+<link rel="stylesheet" href="css/itemList.css"/>
+
+</head>
+<body>
+
+<div class="yui3-g">
+	
+	<!-- Item List -->
+	<div class="yui3-u-3-4 item-list module" id='module-itemList'>
+		
+		<ul>
+			<li>
+				<img src="item.jpg"/>
+				<h2 class='item-data' data-name='name'>item 1</h2>
+				<div class='price'><span class='currency-symbol item-data' data-name='currency'>$</span><span class='item-data currency-rate' data-name='price'>33</span></div>
+				<a class="action-add">Add to cart</a>
+			</li>
+			<li>
+				<img src="item.jpg"/>
+				<h2 class='item-data' data-name='name'>item 2</h2>
+				<div class='price'><span class='currency-symbol item-data' data-name='currency'>$</span><span class='item-data currency-rate' data-name='price'>15</span></div>
+				<a class="action-add">Add to cart</a>				
+			</li>
+			<li>
+				<img src="item.jpg"/>
+				<h2 class='item-data' data-name='name'>item 3</h2>
+				<div class='price'><span class='currency-symbol item-data' data-name='currency'>$</span><span class='item-data currency-rate' data-name='price'>22</span></div>
+				<a class="action-add">Add to cart</a>				
+			</li>
+			<li>
+				<img src="item.jpg"/>
+				<h2 class='item-data' data-name='name'>item 4</h2>
+				<div class='price'><span class='currency-symbol item-data' data-name='currency'>$</span><span class='item-data currency-rate' data-name='price'>13</span></div>
+				<a class="action-add">Add to cart</a>				
+			</li>
+			<li>
+				<img src="item.jpg"/>
+				<h2 class='item-data' data-name='name'>item 5</h2>
+				<div class='price'><span class='currency-symbol item-data' data-name='currency'>$</span><span class='item-data currency-rate' data-name='price'>15</span></div>
+				<a class="action-add">Add to cart</a>				
+			</li>
+			<li>
+				<img src="item.jpg"/>
+				<h2 class='item-data' data-name='name'>item 6</h2>
+				<div class='price'><span class='currency-symbol item-data' data-name='currency'>$</span><span class='item-data currency-rate' data-name='price'>19</span></div>
+				<a class="action-add">Add to cart</a>				
+			</li>												
+
+		</ul>
+
+	</div>
+
+	<!-- Module List -->
+	<div class="yui3-u-1-4">
+		<div class="module yui3-u-1" id='module-currencyConverter'>
+			<h2>- Currency</h2>
+			<select name="currency-converter" id="currency-converter">
+				<option value="USD-$" selected>USD</option>
+				<option value="CNY-¥">YUAN</option>
+			</select>
+		</div>
+		<div class="module yui3-u-1" id='module-cart'>
+			<h2>- Cart</h2>
+			<ul></ul>
+		</div>
+		<div class="module yui3-u-1" id='module-summary'>
+			<h2>- Summary</h2>
+			<br/>
+			<div>
+				<span>Subtotal</span>
+				<span class='currency-symbol'>$</span>
+				<span class='subtotal currency-rate'>0</span>
+			</div>
+
+		</div>
+
+	</div>
+
+
+</div>
+
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'></script>
+
+<script type="text/javascript" src='scripts/Galaxy.js'></script>
+<script type="text/javascript" src='scripts/EventLogger.js'></script>
+
+<script type="text/javascript" src='modules/itemList.js'></script>
+<script type="text/javascript" src='modules/currencyConverter.js'></script>
+<script type="text/javascript" src='modules/cart.js'></script>
+<script type="text/javascript" src='modules/summary.js'></script>
+
+<script type="text/javascript">
+
+itemList.init();
+currencyConverter.init();
+cart.init();
+summary.init();
+	
+</script>
+
+</body>
+</html>

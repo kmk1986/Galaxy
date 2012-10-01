@@ -1,0 +1,59 @@
+
+<h2 id='internalEvents' class='method'>Internal Events</h2>
+
+<h2 class="desc-title">event-published</h2>
+
+<table class="parameter">
+    <thead>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>eventName</td>
+            <td>String</td>
+            <td>name of the event published</td>
+        </tr>
+        <tr>
+            <td>senderName</td>
+            <td>String</td>
+            <td>name of the sender who published the event</td>
+        </tr>        
+        <tr>
+            <td>moduleName</td>
+            <td>String</td>
+            <td>name of the module who received the event</td>
+        </tr>   
+        <tr>
+            <td>eventData</td>
+            <td>Mixed</td>
+            <td>Optional</td>
+        </tr>               
+    </tbody>
+</table>
+
+<h2 class="desc-title">event-subscribed</h2>
+
+<table class="parameter">
+    <thead>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>eventName</td>
+            <td>String</td>
+            <td>name of the event subscribed</td>
+        </tr>
+        <tr>
+            <td>moduleName</td>
+            <td>String</td>
+            <td>name of the module who subscribed the event</td>
+        </tr>        
+    </tbody>
+</table>
+
+<h2 class="desc-title">event-unsubscribed</h2>
+<h2 class="desc-title">event-listener-not-found</h2>

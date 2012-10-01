@@ -1,0 +1,71 @@
+<h2 id='Module.publish' class='method'>Module.publish</h2>
+<p class="description">publishes an event</p>
+
+
+<h2 class="usage desc-title">Usage</h2>
+<p class="description">Module.publish(eventName, eventData);</p>
+
+<h2 class="desc-title">Note</h2>
+
+
+<h2 class="desc-title">Parameter</h2>
+<table class="parameter">
+    <thead>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>eventName</td>
+            <td>String</td>
+            <td>name of the event</td>
+        </tr>
+        <tr>
+            <td>eventData</td>
+            <td>Mixed</td>
+            <td>a data for the event</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 class="desc-title">Example</h2>
+
+<pre class="brush:js">
+
+var Cart = (function(){
+    
+    var mediator = Galaxy.register('testModule');
+    this.name = 'Cart';
+
+    var onAddToCart = function(eventData) {
+
+        // code goes here
+        // let other modules know that Cart has added an item
+        // note that we've already reserved 'ItemAdded'
+
+        mediator.publish("ItemAdded",{
+            itemName: "test item",
+            price: 33
+        });
+
+
+	}
+
+	var onRemoveFromCart = function(eventData) {
+
+		console.log( this.name ); // outputs Cart as expected
+
+	}
+
+    mediator.reserveEvents(["ItemAdded"]);
+
+    mediator.subscribe({
+    	'addToCart': onAddToCart,
+    	'removeFromCart': [onRemoveFromCart, this]
+	});
+   
+
+}());    
+
+</pre>

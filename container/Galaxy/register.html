@@ -1,0 +1,34 @@
+
+<!-- Mediator.register -->
+
+<h2 id='Galaxy.register' class='method'>Galaxy.register</h2>
+
+<p class="description">Creates a facade object and return it</p>
+
+<h2 class="usage desc-title">Usage</h2>
+<p>Galaxy.register('your id')</p>
+<table class="parameter">
+    <thead>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>id</td>
+            <td>String</td>
+            <td>id of your facade instance</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 class="desc-title">Example</h2>
+
+<pre class='brush: js'>
+    var GUIWindow = (function(){
+
+        // notifier gets all the methods from Module (facade)
+        var notifier = Galaxy.register('test')
+
+    }());
+</pre>

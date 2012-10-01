@@ -1,0 +1,67 @@
+<h2 id='Module.subscribe' class='method'>Module.subscribe</h2>
+<p class="description">subscribe to events</p>
+
+
+<h2 class="usage desc-title">Usage</h2>
+<p class="description">Module.subscribe(object);</p>
+<pre class='brush:js'>Module.subscrbe({
+	"event name goes here": this.callback,
+	"event name goes here": [this.callback, context]
+})</pre>
+
+<h2 class="desc-title">Dev Notes</h2>
+<p class="description">Module.subscribe is a facade method for <a href='#Module.subscribeOne' class='refer'>Module.subscribeOne</a>. It invokes subscribeOne to subscribe an event.</p>
+
+<h2 class="desc-title">Parameter</h2>
+<p class="description">subscribe expects an object (collection of event and callback paris).</p>
+<table class="parameter">
+    <thead>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>eventName</td>
+            <td>String</td>
+            <td>name of the event</td>
+        </tr>
+        <tr>
+            <td>callback</td>
+            <td>a function or an array with a function and a context</td>
+            <td>depends on what you want you can pass either a function or a function with a context in an array. Refer to the example or usage.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 class="desc-title">Example</h2>
+
+<pre class="brush:js">
+
+var Cart = (function(){
+    
+    var mediator = Galaxy.register('testModule');
+    this.name = 'Cart';
+
+    var onAddToCart = function(eventData) {
+
+    	//when you use 'this' keyword here, it refers to the window object
+    	this.mediator.unsubscribe("addToCart"); // fails
+
+	}
+
+	var onRemoveFromCart = function(eventData) {
+
+		console.log( this.name ); // outputs Cart as expected
+
+	}
+
+    mediator.subscribe({
+    	'addToCart': onAddToCart,
+    	'removeFromCart': [onRemoveFromCart, this]
+	});
+   
+
+}());    
+
+</pre>

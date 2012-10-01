@@ -1,0 +1,28 @@
+<h2 id='Module.start' class='method'>Mediator.start</h2>
+<p class="description">starts a module. If the module is in 'pause' status, it will resume. If the module has never been started, it will initiailize the module.</p>
+
+
+<h2 class="usage desc-title">Usage</h2>
+<p>Module.start()</p>
+
+<h2 class="desc-title">Example</h2>
+
+<pre class="brush:js">
+
+var Module = (function(){
+    
+    // you must pass falto as the secnd parameter of the register method
+    // the default is 'true' so that it will autostart all the time
+    var mediator = Galaxy.register('testModule' , false);
+
+    // this will fail since the mediator is not started yet.
+    mediator.subscribe({
+    	'onReady': [this.onReady, this]
+	});
+
+	mediator.start();
+	
+
+}());    
+
+</pre>

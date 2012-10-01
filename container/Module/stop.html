@@ -1,0 +1,30 @@
+<h2 id='Module.stop' class='method'>Mediator.stop</h2>
+<p class="description">stops a module. All the module will be removed from the mediator. Once you call stop, you will have to re-initialize it with <a href='#module.register' class='refer'>.register</a> to re-use it. You also have to call <a href='#module.subscribe' class='refer'>.subscribe</a> again. Basically, calling stop() makes a module object unusable.</p>
+
+
+<h2 class="usage desc-title">Usage</h2>
+<p>Module.stop()</p>
+
+<h2 class="desc-title">Example</h2>
+
+<pre class="brush:js">
+
+var Module = (function(){
+
+    var mediator = Galaxy.register('testModule');
+
+    var onReady = function() {
+
+    	// stop this module when we get 'onReady' event
+    	mediator.stop();
+	}
+
+
+    mediator.subscribe({
+    	'onReady': [onReady, this]
+	});
+
+
+}());    
+
+</pre>

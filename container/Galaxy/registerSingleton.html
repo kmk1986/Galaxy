@@ -1,0 +1,34 @@
+
+<!-- Mediator.registerSingleton -->
+
+<h2 id='Galaxy.registerSingleton' class='method'>Galaxy.registerSingleton</h2>
+<p class="description">Attempts to create a facade object with an id. If the Mediator already has a facde object with the id provided, it simply returns it.</p>
+
+<h2 class="desc-title">Example</h2>
+<pre class="brush:js">
+    
+    var CartItem = function() {
+
+        // all the CartItem instances will have the same facade instance
+        this.notifier = Galaxy.registerSingleton('cartItem');
+
+    }
+
+    var Cart = (function(){
+
+        var notifier = Galaxy.register('cart');
+        var items = [];
+
+        var addItem = fuction( eventData ) {
+
+            items.push( new CartItem() );
+
+        }
+
+        notifier.subscribe({
+            'addItem': [addItem, this]
+        });
+
+    }());
+
+</pre>

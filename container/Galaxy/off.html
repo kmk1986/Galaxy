@@ -1,0 +1,77 @@
+<h2 id='Mediator.on' class='method'>Galaxy.off</h2>
+<p class="description">Unbind an event from the internal events</p>
+
+<h2 class="usage desc-title">Usage</h2>
+<p>Galaxy.off(eventName, callback)</p>
+<table class="parameter">
+    <thead>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>eventName</td>
+            <td>String</td>
+            <td>name of the internal event you've subscribed</td>
+        </tr>
+        <tr>
+            <td>callback</td>
+            <td>Function</td>
+            <td>The callback you passed to Galaxy.on method</td>
+        </tr>        
+    </tbody>
+</table>
+
+<h2 class="desc-title">Example</h2>
+<pre class="brush:js">
+
+;(function(Galaxy){
+    
+    /*
+    * @param {object} eventData
+    *   @param {object} sender
+    *       @param {string} namespace - sender object
+    *       @param {string} method - sender method
+    *   @param {string} eventName - name of the event published
+    *   @param {string} senderName - name of the sender who published  the event
+    *   @param {string} moduleName - name of the module who received the event
+    *   @param {object} eventData 
+    */
+
+    var onEventPublished = function(eventData){
+
+        var msg = [
+            eventData.senderName,
+            " published '",
+            eventData.eventName,
+            "' to ",
+            eventData.moduleName,
+            " with eventData of ",
+            eventData.eventData
+        ];
+
+        eventData = null;
+
+        console.log(msg.join(""));
+
+
+
+    }
+
+    Galaxy.on('event-published', onEventPublished );
+
+    // pseudo code
+    // when a user clicks 'stop logging', stop it.
+
+    $("#stoppLogging").on('click',function(){
+
+        Galaxy.off("event-published", onEventPublished );
+
+    });
+
+
+
+}(Galaxy));
+
+</pre>
