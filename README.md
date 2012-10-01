@@ -9,6 +9,11 @@ Purpose
 
  Galaxy provides a fleixble pattern to be used with your existing architcture instead of forcing you to use a pre-defined structure. It is up to you how you utilize Galaxy.
 
+Progress
+========
+
+Galaxy works without a problem so far, but it's missing examples, manuals, and a complete unit tests.
+
 Download
 =========
 
