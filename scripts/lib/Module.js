@@ -42,6 +42,11 @@ var Module = function(id, autostart )
 
 	}
 
+	/*
+	* Modules in this list can acccess this object's method directly
+	*/
+	this.directAccessList = {} 
+
 }
 
 
@@ -75,6 +80,37 @@ Module.prototype = {
 		this.events = [];
 
 		this.currentStatus = this.STATUS.STARTED;
+
+	},
+
+	/*
+	*  Allow modules to access a module directly
+	*  only the allowed modules can get an instance of a module by Galaxy.getModule()
+	*
+	*/
+	allowDirectAccess : function( moduleList ) {
+
+		var i;
+		for( i in moduleList ) {
+
+			if( moduleList.hasOwnProperty(i) ) {
+
+				this.allowDirectAccessTo( moduleList[i] );
+
+			}
+		}
+
+	}
+
+	allowDirectAccessTo: function( moduleName ) {
+
+		this.directAccessList[moduleName] = true;
+
+	},
+
+	unallowDirectAccessTo: function( moduleName ) {
+		
+		this.directAccessList[moduleName] = false;
 
 	},
 
